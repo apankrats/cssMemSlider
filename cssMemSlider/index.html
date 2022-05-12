@@ -6,56 +6,54 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./normalize.css">
     <link rel="stylesheet" href="./style.css">
-    <title>CSS MemSlider</title>
+    <title>Document</title>
 </head>
 <body>
-    <div class="container">
-        <div class="wrapper">
-            <div class="slider">
-                <div class="slide slide1">
-                    <img src="./assets/1.jpg" alt="mem">
-                </div>
-                <div class="slide slide2">
-                    <img src="./assets/2.jpg" alt="mem">
-                </div>
-                <div class="slide slide3">
-                    <img src="./assets/3.jpg" alt="mem">
-                </div>
-                <div class="slide slide4">
-                    <img src="./assets/4.jpg" alt="mem">
-                </div>
-                <div class="slide slide5">
-                    <img src="./assets/5.jpg" alt="mem">
-                </div>
+    <div class="wrapper">
+        <div class="navigations">
+            <label for="slide1"></label>
+            <label for="slide2"></label>
+            <label for="slide3"></label>
+            <label for="slide4"></label>
+            <label for="slide5"></label>
+        </div>
+        <input type="radio" name="point" id="slide1" checked>
+        <input type="radio" name="point" id="slide2">
+        <input type="radio" name="point" id="slide3">
+        <input type="radio" name="point" id="slide4">
+        <input type="radio" name="point" id="slide5">
+        <div class="slider">
+            <div class="slide slide1">
+                <img src="./assets/1.jpg" alt="mem">
             </div>
-            <div class="description-wrapper">
-                <div class="description">
-                    <p>Hello! I'm glad to see you :)</p>
-                </div>
-                <div class="description">
-                    <p>When you turned on the front camera</p>
-                </div>
-                <div class="description">
-                    <p>Fallen into sleep</p>
-                </div>
-                <div class="description">
-                    <p>When did you learn the first word in Spanish</p>
-                </div>
-                <div class="description">
-                    <p>Bye! Thank you for viewing my memes :)</p>
-                </div>
+            <div class="slide slide2">
+                <img src="./assets/2.jpg" alt="mem">
             </div>
-            <div class="navigations">
-                <input type="radio" name="point" id="slide1" checked>
-                <input type="radio" name="point" id="slide2">
-                <input type="radio" name="point" id="slide3">
-                <input type="radio" name="point" id="slide4">
-                <input type="radio" name="point" id="slide5">
-                <label for="slide1"></label>
-                <label for="slide2"></label>
-                <label for="slide3"></label>
-                <label for="slide4"></label>
-                <label for="slide5"></label>
+            <div class="slide slide3">
+                <img src="./assets/3.jpg" alt="mem">
+            </div>
+            <div class="slide slide4">
+                <img src="./assets/4.jpg" alt="mem">
+            </div>
+            <div class="slide slide5">
+                <img src="./assets/5.jpg" alt="mem">
+            </div>
+        </div>
+        <div class="description-wrapper">
+            <div class="description">
+                <p>Hello! I'm glad to see you :)</p>
+            </div>
+            <div class="description">
+                <p>When you turned on the front camera</p>
+            </div>
+            <div class="description">
+                <p>Fallen into sleep</p>
+            </div>
+            <div class="description">
+                <p>When did you learn the first word in Spanish</p>
+            </div>
+            <div class="description">
+                <p>Bye! Thank you for viewing my memes :)</p>
             </div>
         </div>
     </div>
