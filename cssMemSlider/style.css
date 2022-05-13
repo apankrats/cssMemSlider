@@ -69,7 +69,6 @@ input {
     width: 1.2rem;
     height: 1.2rem;
     border: 0.1rem #000 solid;
-    background: rgb(18, 110, 64);
     border-radius: 50%;
     margin: 0 0.2rem;
     transition: .3s all;
@@ -82,6 +81,10 @@ input {
 .point:hover {
     background: rgb(241, 175, 87);
     cursor: pointer;
+}
+
+.point:active {
+    background: rgb(231, 122, 71);
 }
 
 #slide1:checked ~ .points .point1,
