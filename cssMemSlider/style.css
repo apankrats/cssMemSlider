@@ -5,17 +5,23 @@ body {
 
 
 .wrapper {
-    width: 450px;
-    height: 450px;
+    display: grid;
+    grid-template-columns: 3fr 0.5fr;
+    grid-template-rows: 30rem 10rem;
+    align-items: center;
+    width: 30rem;
+    height: 30rem;
     margin: auto;
 }
 
 .slider {
-    margin-top: 50px;
+    grid-column-start: 1;
+    grid-column-end: 3;
+    margin-top: 4rem;
     width: 100%;
     height: 100%;
     overflow: hidden;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 1);    
+    box-shadow: 0 0 1rem rgba(0, 0, 0, 1);    
 }
 
 .slide {
@@ -31,7 +37,7 @@ body {
 }
 
 .description{
-    margin-top: 20px;
+    margin-top: 0.5rem;
     width: 100%;
     overflow: hidden;
     font-size: 20px;
@@ -39,16 +45,54 @@ body {
 
 .descr {
     display: none;
-    font-size: 20px;
+    font-size: 1.3rem;
     font-family: sans-serif;
+    text-align: center;
+}
+
+input {
+    display: none;
 }
 
 
-/* .slide1 { background-image: url(./assets/1.jpg); background-size: contain; }
-.slide2 { background-image: url(./assets/2.jpg); background-size: contain; }
-.slide3 { background-image: url(./assets/3.jpg); background-size: contain; }
-.slide4 { background-image: url(./assets/4.jpg); background-size: contain; }
-.slide5 { background-image: url(./assets/5.jpg); background-size: contain; }  */
+.points {
+    height: 2rem;
+    margin-top: 2rem;
+    display: flex;
+    justify-content: center;
+}
+
+.points:hover {
+    cursor: pointer;
+}
+
+.point {
+    width: 1.2rem;
+    height: 1.2rem;
+    border: 1px #000 solid;
+    background: rgb(18, 110, 64);
+    border-radius: 50%;
+    margin: 0 0.2rem;
+}
+
+.point:checked {
+    background: rgb(241, 175, 87);
+}
+
+.point:hover {
+    transition: .3s;
+    background: rgb(241, 175, 87);
+    cursor: pointer;
+}
+
+#slide1:active ~ .slider .slide1,
+#slide2:active ~ .slider .slide2,
+#slide3:active ~ .slider .slide3,
+#slide4:active ~ .slider .slide4,
+#slide5:active ~ .slider .slide5 {
+	display: block;
+    transition: transform ease-in-out .5s, opacity ease-in-out 
+}
 
 #slide1:checked ~ .slider .slide1,
 #slide2:checked ~ .slider .slide2,
@@ -94,6 +138,25 @@ body {
      to {
         margin-left: 0%;
         width: 100%;
+    }
+}
+
+@media (max-width: 550px) {
+    .wrapper {
+        grid-template-columns: 1fr;
+        grid-template-rows: 17rem 8rem 2rem;
+        width: 17rem;
+        height: 17rem;
+    }
+    .slider {
+        grid-column-start: 1;
+        grid-column-end: 2;
+    }
+    .points {
+        order: 2;
+    }
+    .description {
+        order: 3;
     }
 }
 
