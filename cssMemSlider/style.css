@@ -40,7 +40,6 @@ body {
     margin-top: 0.5rem;
     width: 100%;
     overflow: hidden;
-    font-size: 20px;
 }
 
 .descr {
@@ -69,10 +68,11 @@ input {
 .point {
     width: 1.2rem;
     height: 1.2rem;
-    border: 1px #000 solid;
+    border: 0.1rem #000 solid;
     background: rgb(18, 110, 64);
     border-radius: 50%;
     margin: 0 0.2rem;
+    transition: .3s all;
 }
 
 .point:checked {
@@ -80,18 +80,16 @@ input {
 }
 
 .point:hover {
-    transition: .3s;
     background: rgb(241, 175, 87);
     cursor: pointer;
 }
 
-#slide1:active ~ .slider .slide1,
-#slide2:active ~ .slider .slide2,
-#slide3:active ~ .slider .slide3,
-#slide4:active ~ .slider .slide4,
-#slide5:active ~ .slider .slide5 {
-	display: block;
-    transition: transform ease-in-out .5s, opacity ease-in-out 
+#slide1:checked ~ .points .point1,
+#slide2:checked ~ .points .point2,
+#slide3:checked ~ .points .point3,
+#slide4:checked ~ .points .point4,
+#slide5:checked ~ .points .point5 {
+	background: rgb(241, 175, 87);
 }
 
 #slide1:checked ~ .slider .slide1,
@@ -100,7 +98,6 @@ input {
 #slide4:checked ~ .slider .slide4,
 #slide5:checked ~ .slider .slide5 {
 	display: block;
-    transition: transform ease-in-out .5s, opacity ease-in-out 
 }
 
 #slide1:checked ~ .description .descr1,
@@ -110,6 +107,7 @@ input {
 #slide5:checked ~ .description .descr5 {
     display: block;
 }
+
 
 .fade {
     animation-name: fade;
