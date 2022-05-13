@@ -1,12 +1,12 @@
 body {
-    /* background: linear-gradient(to bottom right, rgba(86, 86, 192, 0.575), rgba(128, 95, 118, 0.5)) no-repeat;
-    height: 100%; */
+    background: url('./assets/bg.jpg');
+    background-size: cover;
 }
 
 
 .wrapper {
-    width: 500px;
-    height: 500px;
+    width: 450px;
+    height: 450px;
     margin: auto;
 }
 
@@ -30,18 +30,70 @@ body {
 	transition: transform ease-in-out .5s, opacity ease-in-out 
 }
 
+.description{
+    margin-top: 20px;
+    width: 100%;
+    overflow: hidden;
+    font-size: 20px;
+}
+
+.descr {
+    display: none;
+    font-size: 20px;
+    font-family: sans-serif;
+}
+
+
 /* .slide1 { background-image: url(./assets/1.jpg); background-size: contain; }
 .slide2 { background-image: url(./assets/2.jpg); background-size: contain; }
 .slide3 { background-image: url(./assets/3.jpg); background-size: contain; }
 .slide4 { background-image: url(./assets/4.jpg); background-size: contain; }
 .slide5 { background-image: url(./assets/5.jpg); background-size: contain; }  */
 
-#slide1:checked ~ .slider > .slide1,
-#slide2:checked ~ .slider > .slide2,
-#slide3:checked ~ .slider > .slide3,
-#slide4:checked ~ .slider > .slide4,
-#slide5:checked ~ .slider > .slide5 {
+#slide1:checked ~ .slider .slide1,
+#slide2:checked ~ .slider .slide2,
+#slide3:checked ~ .slider .slide3,
+#slide4:checked ~ .slider .slide4,
+#slide5:checked ~ .slider .slide5 {
 	display: block;
     transition: transform ease-in-out .5s, opacity ease-in-out 
+}
+
+#slide1:checked ~ .description .descr1,
+#slide2:checked ~ .description .descr2,
+#slide3:checked ~ .description .descr3,
+#slide4:checked ~ .description .descr4,
+#slide5:checked ~ .description .descr5 {
+    display: block;
+}
+
+.fade {
+    animation-name: fade;
+    animation-duration: 1.5s;
+}
+
+.rise {
+    animation-name: rise;
+    animation-duration: 1s;
+}
+    
+@keyframes fade {
+    from {
+        opacity: 0.1;
+    }
+    to {
+        opacity: 1;
+    }
+}
+    
+@keyframes rise {
+    from {
+        margin-left: 100%;
+        width: 100%;
+    }
+     to {
+        margin-left: 0%;
+        width: 100%;
+    }
 }
 
