@@ -1,0 +1,163 @@
+body {
+    background: url('./assets/bg.jpg');
+    background-size: cover;
+}
+
+
+.wrapper {
+    display: grid;
+    grid-template-columns: 3fr 0.5fr;
+    grid-template-rows: 30rem 10rem;
+    align-items: center;
+    width: 30rem;
+    height: 30rem;
+    margin: auto;
+}
+
+.slider {
+    grid-column-start: 1;
+    grid-column-end: 3;
+    margin-top: 4rem;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    box-shadow: 0 0 1rem rgba(0, 0, 0, 1);    
+}
+
+.slide {
+    display: none;
+    width: 100%;
+    height: 100%;
+}
+
+.slide img {
+    width: 100%;
+    height: 100%;
+	transition: transform ease-in-out .5s, opacity ease-in-out 
+}
+
+.description{
+    margin-top: 0.5rem;
+    width: 100%;
+    overflow: hidden;
+}
+
+.descr {
+    display: none;
+    font-size: 1.3rem;
+    font-family: sans-serif;
+    text-align: center;
+}
+
+input {
+    display: none;
+}
+
+
+.points {
+    height: 2rem;
+    margin-top: 2rem;
+    display: flex;
+    justify-content: center;
+}
+
+.points:hover {
+    cursor: pointer;
+}
+
+.point {
+    width: 1.2rem;
+    height: 1.2rem;
+    border: 0.1rem #000 solid;
+    border-radius: 50%;
+    margin: 0 0.2rem;
+    transition: .3s all;
+}
+
+.point:checked {
+    background: rgb(241, 175, 87);
+}
+
+.point:hover {
+    background: rgb(241, 175, 87);
+    cursor: pointer;
+}
+
+.point:active {
+    background: rgb(231, 122, 71);
+}
+
+#slide1:checked ~ .points .point1,
+#slide2:checked ~ .points .point2,
+#slide3:checked ~ .points .point3,
+#slide4:checked ~ .points .point4,
+#slide5:checked ~ .points .point5 {
+	background: rgb(241, 175, 87);
+}
+
+#slide1:checked ~ .slider .slide1,
+#slide2:checked ~ .slider .slide2,
+#slide3:checked ~ .slider .slide3,
+#slide4:checked ~ .slider .slide4,
+#slide5:checked ~ .slider .slide5 {
+	display: block;
+}
+
+#slide1:checked ~ .description .descr1,
+#slide2:checked ~ .description .descr2,
+#slide3:checked ~ .description .descr3,
+#slide4:checked ~ .description .descr4,
+#slide5:checked ~ .description .descr5 {
+    display: block;
+}
+
+
+.fade {
+    animation-name: fade;
+    animation-duration: 1.5s;
+}
+
+.rise {
+    animation-name: rise;
+    animation-duration: 1s;
+}
+    
+@keyframes fade {
+    from {
+        opacity: 0.1;
+    }
+    to {
+        opacity: 1;
+    }
+}
+    
+@keyframes rise {
+    from {
+        margin-left: 100%;
+        width: 100%;
+    }
+     to {
+        margin-left: 0%;
+        width: 100%;
+    }
+}
+
+@media (max-width: 550px) {
+    .wrapper {
+        grid-template-columns: 1fr;
+        grid-template-rows: 17rem 8rem 2rem;
+        width: 17rem;
+        height: 17rem;
+    }
+    .slider {
+        grid-column-start: 1;
+        grid-column-end: 2;
+    }
+    .points {
+        order: 2;
+    }
+    .description {
+        order: 3;
+    }
+}
+
